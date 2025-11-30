@@ -23,11 +23,11 @@ public class AlexLionTest {
     @Test
     public void getFriendsReturnsList() throws Exception {
         AlexLion alex = new AlexLion(feline);
-        List<String> friends = alex.getFriends();
-        assertEquals(3, friends.size());
-        assertTrue(friends.contains("Марти"));
-        assertTrue(friends.contains("Глория"));
-        assertTrue(friends.contains("Мелман"));
+        List<String> expectedFriends = List.of("Марти", "Глория", "Мелман");
+        List<String> actualFriends = alex.getFriends();
+        assertEquals("Список друзей должен соответствовать ожидаемому",
+                expectedFriends,
+                actualFriends);
     }
 
     @Test
